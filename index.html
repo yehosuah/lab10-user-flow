@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MercadoCerca | User Flow Challenge</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">UX Tools Challenge · User Flow</p>
+        <h1>MercadoCerca</h1>
+      </div>
+      <nav aria-label="Flujos del reto">
+        <button class="tab active" data-flow="order">Pedido completo</button>
+        <button class="tab" data-flow="payment">Agregar pago</button>
+        <button class="tab" data-flow="reorder">Reordenar</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="brief" aria-labelledby="brief-title">
+        <div>
+          <h2 id="brief-title">Flujo para pedir supermercado a domicilio</h2>
+          <p>
+            Usuario meta: persona ocupada que quiere recibir productos frescos
+            el mismo dia, sin confundirse entre tienda, carrito, pago y horario.
+          </p>
+        </div>
+        <div class="legend" aria-label="Leyenda">
+          <span><i class="dot start"></i> Inicio/fin</span>
+          <span><i class="dot screen"></i> Pantalla</span>
+          <span><i class="dot decision"></i> Decision</span>
+          <span><i class="dot system"></i> Sistema</span>
+        </div>
+      </section>
+
+      <section class="workspace">
+        <aside class="sidebar" aria-label="Resumen del flujo activo">
+          <p class="section-label">Flujo activo</p>
+          <h2 id="flow-title">Pedido completo</h2>
+          <p id="flow-summary">
+            Desde abrir la app hasta confirmar una entrega programada.
+          </p>
+          <dl>
+            <div>
+              <dt>Objetivo</dt>
+              <dd id="flow-goal">Enviar una orden de supermercado sin friccion.</dd>
+            </div>
+            <div>
+              <dt>Exito</dt>
+              <dd id="flow-success">Orden confirmada con tienda, productos, pago y horario.</dd>
+            </div>
+            <div>
+              <dt>Riesgo UX</dt>
+              <dd id="flow-risk">Abandono si costos o disponibilidad aparecen tarde.</dd>
+            </div>
+          </dl>
+        </aside>
+
+        <section class="board" aria-label="Diagrama de flujo">
+          <div class="lane-labels" aria-hidden="true">
+            <span>Usuario</span>
+            <span>App</span>
+            <span>Sistema</span>
+          </div>
+          <div id="flow-board" class="flow-board"></div>
+        </section>
+
+        <aside class="inspector" aria-live="polite">
+          <p class="section-label">Nodo seleccionado</p>
+          <h2 id="node-title">Abrir app</h2>
+          <p id="node-description">
+            El usuario entra con intencion clara: comprar comida para entrega.
+          </p>
+          <div class="inspector-meta">
+            <span id="node-type">Inicio</span>
+            <span id="node-owner">Usuario</span>
+          </div>
+          <h3>Detalle UX</h3>
+          <p id="node-note">
+            Mostrar direccion guardada y acceso rapido a tiendas cercanas.
+          </p>
+        </aside>
+      </section>
+
+      <section class="handoff" aria-labelledby="handoff-title">
+        <div>
+          <p class="section-label">Entrega</p>
+          <h2 id="handoff-title">Decisiones clave para el equipo</h2>
+        </div>
+        <ol>
+          <li>El costo total aparece antes de pedir el pago.</li>
+          <li>La app valida inventario antes de elegir horario.</li>
+          <li>Los casos de producto agotado tienen reemplazo, eliminar o guardar.</li>
+          <li>Los flujos extra reutilizan el mismo checkout para reducir aprendizaje.</li>
+        </ol>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
