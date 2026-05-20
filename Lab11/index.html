@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lab11 | Transporte accesible</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">HCI · Lab11</p>
+        <h1>Ruta Clara</h1>
+      </div>
+      <nav aria-label="Secciones del laboratorio">
+        <a href="#sketching">Bocetos</a>
+        <a href="#storyboard">Storyboard</a>
+        <a href="#prototipo">Prototipo</a>
+        <a href="#reflexion">Reflexion</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <p class="eyebrow">Tipo de presentacion elegido: sitio web interactivo</p>
+          <h2 id="hero-title">Interfaz para transporte de personas con discapacidad visual</h2>
+          <p>
+            Propuesta de app movil que combina guia por voz, vibracion, alto contraste y
+            confirmacion del transporte para reducir incertidumbre durante el viaje.
+          </p>
+        </div>
+        <div class="phone-preview" aria-label="Vista previa de Ruta Clara">
+          <div class="phone-status">
+            <span>12:40</span>
+            <span>Ruta activa</span>
+          </div>
+          <div class="route-card">
+            <span class="pulse"></span>
+            <p>Bus 210 llega en 4 min</p>
+            <strong>Parada: Clinica Zona 10</strong>
+          </div>
+          <button>Escuchar siguiente paso</button>
+        </div>
+      </section>
+
+      <section id="sketching" class="section two-col">
+        <div>
+          <p class="eyebrow">Parte 1 · Sketching</p>
+          <h2>Tres bocetos rapidos</h2>
+          <p>
+            Los tres bocetos exploran soluciones distintas: una ruta guiada por voz, una
+            pantalla centrada en parada segura y una experiencia con acompanamiento.
+          </p>
+          <ul class="notes">
+            <li><strong>Boceto 1:</strong> boton grande de voz y pasos de ruta.</li>
+            <li><strong>Boceto 2:</strong> informacion de parada, bus y alertas tactiles.</li>
+            <li><strong>Boceto 3:</strong> confirmacion de conductor o acompanante.</li>
+          </ul>
+          <div class="feedback">
+            <h3>Comentario de companero</h3>
+            <p>
+              Me indicaron que el boton de voz debia ser mas dominante, que la app no
+              debia depender solo de texto y que la confirmacion del bus tenia que ser
+              mas clara antes de subir.
+            </p>
+          </div>
+        </div>
+        <figure>
+          <img src="assets/bocetos.png" alt="Tres bocetos de interfaz para Ruta Clara" />
+          <figcaption>Bocetos rapidos generados como referencia visual de papel.</figcaption>
+        </figure>
+      </section>
+
+      <section id="storyboard" class="section two-col reverse">
+        <figure>
+          <img src="assets/storyboard.png" alt="Storyboard de ocho vinetas de Ruta Clara" />
+          <figcaption>Storyboard de 8 vinetas basado en el boceto de ruta por voz.</figcaption>
+        </figure>
+        <div>
+          <p class="eyebrow">Parte 2 · Storyboarding</p>
+          <h2>Situacion de uso</h2>
+          <div class="story-list">
+            <article>
+              <span>1</span>
+              <p>Usuario en casa quiere llegar a una clinica. Se siente nervioso.</p>
+            </article>
+            <article>
+              <span>2</span>
+              <p>La app escucha el destino por voz. Se siente mas tranquilo.</p>
+            </article>
+            <article>
+              <span>3</span>
+              <p>La app guia hacia la parada con audio y vibracion. Va concentrado.</p>
+            </article>
+            <article>
+              <span>4</span>
+              <p>Llega a la parada correcta. Se siente aliviado.</p>
+            </article>
+            <article>
+              <span>5</span>
+              <p>La app confirma bus y conductor. Se siente confiado.</p>
+            </article>
+            <article>
+              <span>6</span>
+              <p>Sube al transporte con ayuda de audio. Se siente seguro.</p>
+            </article>
+            <article>
+              <span>7</span>
+              <p>Recibe aviso antes de bajar. Se mantiene atento.</p>
+            </article>
+            <article>
+              <span>8</span>
+              <p>Llega a la clinica y guarda la ruta. Se siente satisfecho.</p>
+            </article>
+          </div>
+          <div class="feedback">
+            <h3>Retroalimentacion de grupo</h3>
+            <p>
+              El grupo sugirio agregar una opcion de repetir instrucciones y una
+              confirmacion fuerte cuando el bus correcto esta enfrente.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="prototipo" class="section prototype-section">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Parte 3 · Prototipo</p>
+            <h2>Prototipo en linea</h2>
+          </div>
+          <p>
+            Flujo probado con roles de usuario y evaluador: pedir ruta, caminar a parada,
+            confirmar transporte y bajar en destino.
+          </p>
+        </div>
+
+        <div class="prototype-grid">
+          <aside class="test-notes">
+            <h3>Hallazgos de prueba</h3>
+            <ul>
+              <li>El usuario encontro rapido el boton de voz.</li>
+              <li>Pidio repetir la instruccion sin tocar varias pantallas.</li>
+              <li>La alerta de bus correcto debe sonar y vibrar.</li>
+              <li>El estado del viaje necesita palabras cortas.</li>
+            </ul>
+          </aside>
+
+          <section class="app-shell" aria-label="Prototipo clicable de Ruta Clara">
+            <div class="app-screen" id="app-screen"></div>
+            <div class="app-actions">
+              <button id="back-btn" type="button">Atras</button>
+              <button id="voice-btn" type="button">Repetir audio</button>
+              <button id="next-btn" type="button">Siguiente</button>
+            </div>
+          </section>
+
+          <aside class="eval-panel">
+            <h3>Evaluacion rapida</h3>
+            <label>
+              <input type="checkbox" />
+              Entendio el paso sin ayuda
+            </label>
+            <label>
+              <input type="checkbox" />
+              Identifico accion principal
+            </label>
+            <label>
+              <input type="checkbox" />
+              Se sintio seguro para avanzar
+            </label>
+            <textarea placeholder="Notas del evaluador"></textarea>
+          </aside>
+        </div>
+      </section>
+
+      <section id="reflexion" class="section reflection">
+        <p class="eyebrow">Reflexion final</p>
+        <h2>Respuestas breves</h2>
+        <div class="qa-grid">
+          <article>
+            <h3>Que cambio entre primer boceto y prototipo final?</h3>
+            <p>El primer boceto era mas visual. El prototipo final se centro mas en voz, vibracion y confirmaciones.</p>
+          </article>
+          <article>
+            <h3>Necesidad mas dificil de resolver</h3>
+            <p>Confirmar que el transporte correcto llego sin depender de ver el numero del bus.</p>
+          </article>
+          <article>
+            <h3>Supuestos sobre el usuario</h3>
+            <p>Supuse que usa lector de pantalla y audifonos. Si no fuera cierto, la app tendria que depender mas de vibracion y ayuda externa.</p>
+          </article>
+          <article>
+            <h3>Elemento que funciona mejor</h3>
+            <p>El boton de voz grande, porque permite pedir y repetir instrucciones sin buscar opciones pequenas.</p>
+          </article>
+          <article>
+            <h3>Una mejora antes de lanzar</h3>
+            <p>Agregaria confirmacion con el conductor para que la app diga nombre, placa y punto exacto de abordaje.</p>
+          </article>
+          <article>
+            <h3>Momento con feedback mas util</h3>
+            <p>La prueba del prototipo, porque mostro problemas reales al avanzar entre pantallas.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
